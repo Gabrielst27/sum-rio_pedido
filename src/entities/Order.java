@@ -11,15 +11,17 @@ public class Order {
 	private Date moment;
 	private OrderStatus status;
 	
+	private Client client;
+	
 	private List<OrderItem> items = new ArrayList<>();
 	
-	public Order() {
-		
+	public Order() {	
 	}
-	
-	public Order(Date moment, OrderStatus status) {
+
+	public Order(Date moment, OrderStatus status, Client client) {
 		this.moment = moment;
 		this.status = status;
+		this.client = client;
 	}
 
 	public Date getMoment() {
@@ -37,9 +39,29 @@ public class Order {
 	public void setStatus(OrderStatus status) {
 		this.status = status;
 	}
-	
-	public void addItem(int quantity, double price, Product product) {
-		
+
+	public Client getClient() {
+		return client;
 	}
 
+	public void setClient(Client client) {
+		this.client = client;
+	}
+	
+	public void addItem(OrderItem item) {
+		items.add(item);
+	}
+	
+	public void removeItem(OrderItem item) {
+		items.remove(item);
+	}
+	
+	public Double total() {
+		double total = 0;
+		for(OrderItem item : items) {
+			total += item.getPrice();
+		}
+		return total;
+	}
+	
 }
