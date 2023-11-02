@@ -38,6 +38,8 @@ public class Order {
 		this.status = status;
 	}
 	
-	
+	public void addItem(int quantity, double price, Product product) {
+		
+	}
 
 }
