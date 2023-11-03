@@ -37,6 +37,9 @@ public class Program {
 		
 		System.out.printf("\nHow many items to this order?: ");
 		int itemsQuantity = sc.nextInt();
+				
+		Order order = new Order(new Date(), status, client);
+		// newDate() instancia a hora e data atuais do sistema
 		
 		for(int i = 1; i <= itemsQuantity; i++) {
 			sc.nextLine();
