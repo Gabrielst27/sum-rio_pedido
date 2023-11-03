@@ -55,6 +55,7 @@ public class Program {
 			Product product = new Product(prodName, price);
 			OrderItem item = new OrderItem(quantity, price, product);
 			
+			order.addItem(item);
 			}
 		
 		sc.close();
